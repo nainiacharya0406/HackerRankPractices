@@ -1,0 +1,33 @@
+
+public class ValleyCount {
+	
+	static int countingValleys(int n, String s) {
+		int count =0;
+		int i=0;
+		int countValley = 0;
+		while(i<s.length()) {
+			if(s.charAt(i) == 'U') {
+				count++;
+			}
+			else {
+				count--;
+			}
+			if(count == 0 && s.charAt(i) == 'U') {
+				countValley++;
+			}
+			
+		}
+		
+		
+		return count;
+
+    }
+	public static void main(String[] args) {
+		
+		int n=8;
+		String s = "UDDDUDUU";
+		int result = countingValleys(n, s);
+
+	}
+
+}

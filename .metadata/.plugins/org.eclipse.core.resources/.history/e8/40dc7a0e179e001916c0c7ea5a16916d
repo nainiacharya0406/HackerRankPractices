@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class TwoStrings {
+	static String twoStrings(String s1, String s2) {
+		String s3 = "No";
+		int j=0;
+		if(s1.contains(s2)) {
+			s3 = "YES";
+		}
+		return s3;
+
+    }
+
+	public static void main(String[] args) {
+		String s1= "hi";
+		String s2 = "world";
+		String result = twoStrings(s1, s2);
+		System.out.println(result);
+
+	}
+
+}

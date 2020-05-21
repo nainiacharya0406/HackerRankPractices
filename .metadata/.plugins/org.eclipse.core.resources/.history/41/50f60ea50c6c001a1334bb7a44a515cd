@@ -1,0 +1,31 @@
+import java.util.HashMap;
+
+public class HashMapDemo extends Thread {
+
+	static HashMap<Integer, String> map = new HashMap<Integer, String>();
+	public void run() {
+		try {
+			Thread.sleep(10);
+			map.put(103, "D");
+		}catch(InterruptedException e) {
+			System.out.println("Child thread going to add element");
+		}
+	}
+	public static void main(String[] args) throws InterruptedException {
+		map.put(100, "A");
+		map.put(101, "B");
+		map.put(102, "C");
+		HashMapDemo demo = new HashMapDemo();
+		demo.start();
+		
+		for (Object o : map.entrySet())  
+        { 
+            Object s=o; 
+            System.out.println(s); 
+            Thread.sleep(100); 
+        } 
+        System.out.println(map); 
+
+	}
+
+}
